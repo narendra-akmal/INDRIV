@@ -1,5 +1,5 @@
 # ==============================================================================
-# Nama Skrip    : InstalDriver.ps1
+# Nama Skrip    : INDRIV.ps1
 # Deskripsi     : Skrip otomatisasi PowerShell untuk memeriksa, mengunduh, 
 #                 dan menginstal pembaruan driver Windows via modul PSWindowsUpdate.
 # Bahasa        : Bahasa Indonesia
