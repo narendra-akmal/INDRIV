@@ -1,10 +1,17 @@
-# INDRIV (Automated Windows Driver Updater)
-
-**Kode Proyek:** INDRIV-2026
-**Versi Dokumen:** 1.0.0
-**Klasifikasi:** Publik (Open Source)
-**Lisensi:** MIT License
-**Tanggal Rilis:** 17 Agustus 2026
+# <h1 align="center">INDRIV <br> (Automated Windows Driver Updater)</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/PowerShell-v5.1%2B-blue.svg?logo=powershell&logoColor=white" alt="PowerShell Version" />
+  <img src="https://img.shields.io/badge/Platform-Windows-0078D6.svg?logo=windows&logoColor=white" alt="Platform" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" />
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen.svg" alt="Project Status" />
+</p>
+<p align="center">
+  <b>Kode Proyek:</b> INDRIV-2026 &nbsp;|&nbsp;
+  <b>Versi Dokumen:</b> 1.0.0 &nbsp;|&nbsp;
+  <b>Klasifikasi:</b> Publik (Open Source)<br>
+  <b>Lisensi:</b> MIT License &nbsp;|&nbsp;
+  <b>Tanggal Rilis:</b> 17 Agustus 2026
+</p>  
 
 ---
 
