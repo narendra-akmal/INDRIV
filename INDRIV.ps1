@@ -40,14 +40,14 @@ try {
     }
 }
 catch {
-    Write-Output "--- CEK STATUS POWERSHELL ---" -ForegroundColor Yellow
-    Write-Output "PERINGATAN       : Terjadi masalah atau korupsi pada sistem PowerShell!" -ForegroundColor Yellow
-    Write-Output "------------------------------------------" -ForegroundColor Yellow
-    Write-Output "LANGKAH PERBAIKAN:" -ForegroundColor Yellow
-    Write-Output "1. Buka Command Prompt (cmd) sebagai Administrator dan jalankan: sfc /scannow" -ForegroundColor Orange
-	Write-Output "2. Kemudian jalankan: DISM.exe /Online /Cleanup-Image /RestoreHealth" -ForegroundColor Orange
-	Write-Output "2. Ulangi menjalankan: sfc /scannow" -ForegroundColor Orange
-    Write-Output "3. Jika masalah berlanjut, lakukan instal ulang atau update PowerShell/PowerShell Core." -ForegroundColor Orange
+    Write-ColorOutput "--- CEK STATUS POWERSHELL ---" -Color Yellow
+    Write-ColorOutput "PERINGATAN       : Terjadi masalah atau korupsi pada sistem PowerShell!" -Color Yellow
+    Write-ColorOutput "------------------------------------------" -Color Yellow
+    Write-ColorOutput "LANGKAH PERBAIKAN:" -Color Yellow
+    Write-ColorOutput "1. Buka Command Prompt (cmd) sebagai Administrator dan jalankan: sfc /scannow" -Color Orange
+	Write-ColorOutput "2. Kemudian jalankan: DISM.exe /Online /Cleanup-Image /RestoreHealth" -Color Orange
+	Write-ColorOutput "2. Ulangi menjalankan: sfc /scannow" -Color Orange
+    Write-ColorOutput "3. Jika masalah berlanjut, lakukan instal ulang atau update PowerShell/PowerShell Core." -Color Orange
 	Write-Output ""
 }
 
@@ -107,7 +107,7 @@ Write-Host "Total Driver Ditemukan: $($DaftarDriver.Count)" -ForegroundColor Yel
 Write-Host ""
 
 # 5. Konfirmasi dan Pemasangan Driver
-$Konfirmasi = Read-Host "Apakah Anda ingin melanjutkan instalasi driver di atas? (Y/N)"
+$Konfirmasi = Read-Host "Apakah Anda ingin melanjutkan instalasi driver di atas? (Y/N) `nTekan Y untuk memilih Yes atau Ya,`nTekan N untuk memilih No atau tidak:"
 
 if ($Konfirmasi -eq 'Y' -or $Konfirmasi -eq 'y') {
     Write-Host ""
