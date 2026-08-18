@@ -28,13 +28,13 @@ try {
     $providerAktif = Test-Path variable:
 
     if ($versi -and $providerAktif) {
-        Write-Output "--- CEK STATUS POWERSHELL ---" -ForegroundColor Yellow
-        Write-Output "Versi PowerShell : $versi" -ForegroundColor Yellow
-        Write-Output "Execution Policy : $policy" -ForegroundColor Yellow
-        Write-Output "Sistem Akses     : Normal (Provider Aktif)" -ForegroundColor Yellow
-        Write-Output "------------------------------------------" -ForegroundColor Yellow
-        Write-Output "KESIMPULAN       : PowerShell berjalan dengan normal." -ForegroundColor Yellow
-		Write-Output ""
+        Write-ColorOutput "--- CEK STATUS POWERSHELL ---" -Color Yellow
+        Write-ColorOutput "Versi PowerShell : $versi" -Color Yellow
+        Write-ColorOutput "Execution Policy : $policy" -Color Yellow
+        Write-ColorOutput "Sistem Akses     : Normal (Provider Aktif)" -Color Yellow
+        Write-ColorOutput "------------------------------------------" -Color Yellow
+        Write-ColorOutput "KESIMPULAN       : PowerShell berjalan dengan normal." -Color Yellow
+		Write-ColorOutput ""
     } else {
         throw "Komponen internal PowerShell tidak merespons dengan benar." 
     }
