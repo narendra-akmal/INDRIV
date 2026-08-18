@@ -36,7 +36,7 @@ try {
         Write-Output "KESIMPULAN       : PowerShell berjalan dengan normal." -ForegroundColor Yellow
 		Write-Output ""
     } else {
-        throw "Komponen internal PowerShell tidak merespons dengan benar." -ForegroundColor Yellow
+        throw "Komponen internal PowerShell tidak merespons dengan benar." 
     }
 }
 catch {
