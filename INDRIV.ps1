@@ -28,26 +28,26 @@ try {
     $providerAktif = Test-Path variable:
 
     if ($versi -and $providerAktif) {
-        Write-ColorOutput "--- CEK STATUS POWERSHELL ---" -Color Yellow
-        Write-ColorOutput "Versi PowerShell : $versi" -Color Yellow
-        Write-ColorOutput "Execution Policy : $policy" -Color Yellow
-        Write-ColorOutput "Sistem Akses     : Normal (Provider Aktif)" -Color Yellow
-        Write-ColorOutput "------------------------------------------" -Color Yellow
-        Write-ColorOutput "KESIMPULAN       : PowerShell berjalan dengan normal." -Color Yellow
-		Write-ColorOutput ""
+        Write-Output "--- CEK STATUS POWERSHELL ---" 
+        Write-Output "Versi PowerShell : $versi" 
+        Write-Output "Execution Policy : $policy" 
+        Write-Output "Sistem Akses     : Normal (Provider Aktif)" 
+        Write-Output "------------------------------------------" 
+        Write-Output "KESIMPULAN       : PowerShell berjalan dengan normal." 
+		Write-Output ""
     } else {
         throw "Komponen internal PowerShell tidak merespons dengan benar." 
     }
 }
 catch {
-    Write-ColorOutput "--- CEK STATUS POWERSHELL ---" -Color Yellow
-    Write-ColorOutput "PERINGATAN       : Terjadi masalah atau korupsi pada sistem PowerShell!" -Color Yellow
-    Write-ColorOutput "------------------------------------------" -Color Yellow
-    Write-ColorOutput "LANGKAH PERBAIKAN:" -Color Yellow
-    Write-ColorOutput "1. Buka Command Prompt (cmd) sebagai Administrator dan jalankan: sfc /scannow" -Color Orange
-	Write-ColorOutput "2. Kemudian jalankan: DISM.exe /Online /Cleanup-Image /RestoreHealth" -Color Orange
-	Write-ColorOutput "2. Ulangi menjalankan: sfc /scannow" -Color Orange
-    Write-ColorOutput "3. Jika masalah berlanjut, lakukan instal ulang atau update PowerShell/PowerShell Core." -Color Orange
+    Write-Output "--- CEK STATUS POWERSHELL ---" 
+    Write-Output "PERINGATAN       : Terjadi masalah atau korupsi pada sistem PowerShell!" 
+    Write-Output "------------------------------------------" 
+    Write-Output "LANGKAH PERBAIKAN:" 
+    Write-Output "1. Buka Command Prompt (cmd) sebagai Administrator dan jalankan: sfc /scannow" 
+	Write-Output "2. Kemudian jalankan: DISM.exe /Online /Cleanup-Image /RestoreHealth" 
+	Write-Output "2. Ulangi menjalankan: sfc /scannow" 
+    Write-Output "3. Jika masalah berlanjut, lakukan instal ulang atau update PowerShell/PowerShell Core." 
 	Write-Output ""
 }
 
