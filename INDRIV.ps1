@@ -22,6 +22,34 @@ Write-Host "         SKRIP PEMBARUAN & INSTALASI DRIVER WINDOWS         " -Foreg
 Write-Host "============================================================" -ForegroundColor Cyan
 Write-Host ""
 
+#2. Cek Status Powershell
+try {
+    $versi = $PSVersionTable.PSVersion
+    $policy = Get-ExecutionPolicy
+    $providerAktif = Test-Path variable:
+
+    if ($versi -and $providerAktif) {
+        Write-Output "--- CEK STATUS POWERSHELL ---"
+        Write-Output "Versi PowerShell : $versi"
+        Write-Output "Execution Policy : $policy"
+        Write-Output "Sistem Akses     : Normal (Provider Aktif)"
+        Write-Output "------------------------------------------"
+        Write-Output "KESIMPULAN       : PowerShell berjalan dengan normal."
+    } else {
+        throw "Komponen internal PowerShell tidak merespons dengan benar."
+    }
+}
+catch {
+    Write-Output "--- CEK STATUS POWERSHELL ---"
+    Write-Output "PERINGATAN       : Terjadi masalah atau korupsi pada sistem PowerShell!"
+    Write-Output "------------------------------------------"
+    Write-Output "LANGKAH PERBAIKAN:"
+    Write-Output "1. Buka Command Prompt (cmd) sebagai Administrator dan jalankan: sfc /scannow"
+	Write-Output "2. Kemudian jalankan: DISM.exe /Online /Cleanup-Image /RestoreHealth"
+	Write-Output "2. Ulangi menjalankan: sfc /scannow"
+    Write-Output "3. Jika masalah berlanjut, lakukan instal ulang atau update PowerShell/PowerShell Core."
+}
+
 # 2. Pengaturan Kebijakan Eksekusi (Execution Policy)
 Write-Host "[1/4] Memeriksa kebijakan eksekusi PowerShell..." -ForegroundColor Yellow
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
