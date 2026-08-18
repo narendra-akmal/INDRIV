@@ -106,7 +106,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 ```  
 ###### 2. Eksekusi skrip via Internet  
 ```powershell
-irm [https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1](https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1) | iex
+irm https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1 | iex
 
 ```
 
@@ -141,7 +141,7 @@ Set-Location -Path "$env:USERPROFILE\Downloads"
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
 # 3. Unduh skrip dari GitHub
-iwr -UseBasicParsing -Uri "[https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1](https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1)" -OutFile "INDRIV.ps1"
+iwr -UseBasicParsing -Uri "https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1" -OutFile "INDRIV.ps1"
 
 # 4. (Opsional) Periksa isi skrip
 notepad .\INDRIV.ps1
