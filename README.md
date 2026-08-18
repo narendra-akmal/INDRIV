@@ -93,15 +93,76 @@ Pastikan koneksi internet aktif. Jika berada di lingkungan perusahaan, pastikan 
 
 ### 4.2 Prosedur Eksekusi
 
-1. Klik kanan pada tombol Start, pilih **Windows Terminal (Admin)** atau **PowerShell (Admin)**.
+Terdapat dua cara untuk mengeksekusi skrip `INDRIV.ps1`.
 
-2. Eksekusi perintah pemanggilan skrip:
+#### 4.2.1 Eksekusi Langsung via Internet (One-Liner)
+
+Metode tercepat tanpa menyimpan file ke penyimpanan lokal.
+
+##### Perintah Utama
+###### 1. Sesuaikan Execution Policy terlebih dahulu
+```powershell  
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force  
+```  
+###### 2. Eksekusi skrip via Internet  
+```powershell
+irm [https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1](https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1) | iex
+
+```
+
+##### Penjelasan Perintah
+
+* **`irm` (`Invoke-RestMethod`)**: Mengambil isi skrip mentah dari URL.
+* **`iex` (`Invoke-Expression`)**: Langsung menjalankan string kode yang diterima.
+
+##### Kelebihan & Risiko
+
+* **Kelebihan**: Sangat cepat, bersih (tidak menyisakan file skrip di disk), mudah untuk otomatisasi.
+* **Risiko**: Tanpa verifikasi kode (checksum), berpotensi gagal jika dibatasi oleh *Execution Policy*, memerlukan koneksi HTTPS yang valid.
+
+---
+
+#### 4.2.2 Mengunduh dan Menjalankan Secara Lokal
+
+Metode yang lebih aman karena memungkinkan Anda memeriksa kode sebelum dieksekusi.
+
+##### Persiapan
+
+1. Buka **PowerShell / Windows Terminal** sebagai **Administrator** (Klik kanan tombol Start → *PowerShell (Admin)*).
+2. Pastikan perangkat terhubung ke internet.
+
+##### Langkah Eksekusi (Sesi PowerShell Lengkap)
 
 ```powershell
-# Contoh eksekusi jika skrip berada di folder Downloads
+# 1. Pindah ke folder Downloads
 Set-Location -Path "$env:USERPROFILE\Downloads"
+
+# 2. Sesuaikan Execution Policy terlebih dahulu
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+# 3. Unduh skrip dari GitHub
+iwr -UseBasicParsing -Uri "[https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1](https://raw.githubusercontent.com/narendra-akmal/INDRIV/main/INDRIV.ps1)" -OutFile "INDRIV.ps1"
+
+# 4. (Opsional) Periksa isi skrip
+notepad .\INDRIV.ps1
+
+# 5. Buka blokir file internet
+Unblock-File -Path ".\INDRIV.ps1"
+
+# 6. Jalankan skrip
 .\INDRIV.ps1
+
 ```
+
+##### Penjelasan Ringkas Perintah
+
+* **`Set-Location`**: Mengubah direktori kerja aktif.
+* **`Set-ExecutionPolicy RemoteSigned`**: Mengizinkan eksekusi skrip lokal/terpercaya untuk akun pengguna aktif.
+* **`iwr` (`Invoke-WebRequest`)**: Mengunduh file dari URL ke folder kerja.
+* **`Unblock-File`**: Menghapus penanda keamanan *Zone.Identifier* dari file hasil unduhan.
+* **`.\INDRIV.ps1`**: Memanggil dan mengeksekusi skrip dari folder aktif.
+
+---
 
 ### 4.3 Navigasi Antarmuka Pengguna
 
