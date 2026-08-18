@@ -20,7 +20,6 @@ Clear-Host
 Write-Host "============================================================" -ForegroundColor Cyan
 Write-Host "         SKRIP PEMBARUAN & INSTALASI DRIVER WINDOWS         " -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
-Write-Host ""
 
 #2. Cek Status Powershell
 try {
@@ -29,25 +28,27 @@ try {
     $providerAktif = Test-Path variable:
 
     if ($versi -and $providerAktif) {
-        Write-Output "--- CEK STATUS POWERSHELL ---"
-        Write-Output "Versi PowerShell : $versi"
-        Write-Output "Execution Policy : $policy"
-        Write-Output "Sistem Akses     : Normal (Provider Aktif)"
-        Write-Output "------------------------------------------"
-        Write-Output "KESIMPULAN       : PowerShell berjalan dengan normal."
+        Write-Output "--- CEK STATUS POWERSHELL ---" -ForegroundColor Yellow
+        Write-Output "Versi PowerShell : $versi" -ForegroundColor Yellow
+        Write-Output "Execution Policy : $policy" -ForegroundColor Yellow
+        Write-Output "Sistem Akses     : Normal (Provider Aktif)" -ForegroundColor Yellow
+        Write-Output "------------------------------------------" -ForegroundColor Yellow
+        Write-Output "KESIMPULAN       : PowerShell berjalan dengan normal." -ForegroundColor Yellow
+		Write-Output ""
     } else {
-        throw "Komponen internal PowerShell tidak merespons dengan benar."
+        throw "Komponen internal PowerShell tidak merespons dengan benar." -ForegroundColor Yellow
     }
 }
 catch {
-    Write-Output "--- CEK STATUS POWERSHELL ---"
-    Write-Output "PERINGATAN       : Terjadi masalah atau korupsi pada sistem PowerShell!"
-    Write-Output "------------------------------------------"
-    Write-Output "LANGKAH PERBAIKAN:"
-    Write-Output "1. Buka Command Prompt (cmd) sebagai Administrator dan jalankan: sfc /scannow"
-	Write-Output "2. Kemudian jalankan: DISM.exe /Online /Cleanup-Image /RestoreHealth"
-	Write-Output "2. Ulangi menjalankan: sfc /scannow"
-    Write-Output "3. Jika masalah berlanjut, lakukan instal ulang atau update PowerShell/PowerShell Core."
+    Write-Output "--- CEK STATUS POWERSHELL ---" -ForegroundColor Yellow
+    Write-Output "PERINGATAN       : Terjadi masalah atau korupsi pada sistem PowerShell!" -ForegroundColor Yellow
+    Write-Output "------------------------------------------" -ForegroundColor Yellow
+    Write-Output "LANGKAH PERBAIKAN:" -ForegroundColor Yellow
+    Write-Output "1. Buka Command Prompt (cmd) sebagai Administrator dan jalankan: sfc /scannow" -ForegroundColor Orange
+	Write-Output "2. Kemudian jalankan: DISM.exe /Online /Cleanup-Image /RestoreHealth" -ForegroundColor Orange
+	Write-Output "2. Ulangi menjalankan: sfc /scannow" -ForegroundColor Orange
+    Write-Output "3. Jika masalah berlanjut, lakukan instal ulang atau update PowerShell/PowerShell Core." -ForegroundColor Orange
+	Write-Output ""
 }
 
 # 2. Pengaturan Kebijakan Eksekusi (Execution Policy)
