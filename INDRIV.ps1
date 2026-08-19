@@ -125,7 +125,7 @@ if ($Konfirmasi -eq 'Y' -or $Konfirmasi -eq 'y') {
     
     # Konfirmasi restart jika diperlukan
     Write-Host ""
-    $Restart = Read-Host "Beberapa driver mungkin memerlukan *restart*. Restart komputer sekarang? (Y/N)"
+    $Restart = Read-Host "Beberapa driver mungkin memerlukan *restart*. Restart komputer sekarang? (Y/N)`nTekan Y untuk memilih Yes atau Ya,`nTekan N untuk memilih No atau tidak"
     if ($Restart -eq 'Y' -or $Restart -eq 'y') {
         Write-Host "[SISTEM] Memulai ulang sistem dalam 5 detik..." -ForegroundColor Red
         Start-Sleep -Seconds 5
