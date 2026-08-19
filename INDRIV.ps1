@@ -109,7 +109,7 @@ Write-Host "Total Driver Ditemukan: $($DaftarDriver.Count)" -ForegroundColor Yel
 Write-Host ""
 
 # 5. Konfirmasi dan Pemasangan Driver
-$Konfirmasi = Read-Host "Apakah Anda ingin melanjutkan instalasi driver di atas? (Y/N) `nTekan Y untuk memilih Yes atau Ya,`nTekan N untuk memilih No atau tidak:"
+$Konfirmasi = Read-Host "Apakah Anda ingin melanjutkan instalasi driver di atas? (Y/N) `nTekan Y untuk memilih Yes atau Ya,`nTekan N untuk memilih No atau tidak"
 
 if ($Konfirmasi -eq 'Y' -or $Konfirmasi -eq 'y') {
     Write-Host ""
