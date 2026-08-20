@@ -70,7 +70,7 @@ if (-not (Get-Module -ListAvailable -Name PSWindowsUpdate)) {
     }
     catch {
         Write-Host "     [ERROR] Gagal memasang modul PSWindowsUpdate: $_" -ForegroundColor Red
-        Read-Host -Prompt "Tekan tombol apa saja untuk keluar.. "
+        Read-Host -Prompt "Tekan tombol Enter untuk keluar.. "
 		Exit
     }
 } else {
@@ -92,7 +92,7 @@ if ($null -eq $DaftarDriver -or $DaftarDriver.Count -eq 0) {
     Write-Host "[HASIL] Semua driver hardware telah diperbarui! Tidak ada driver baru yang tersedia." -ForegroundColor Green
     Write-Host "------------------------------------------------------------" -ForegroundColor Green
     Write-Host ""
-	Read-Host -Prompt "Tekan tombol apa saja untuk keluar.. "
+	Read-Host -Prompt "Tekan tombol Enter untuk keluar.. "
 	Exit
 }
 
