@@ -1,4 +1,4 @@
-# <h1 align="center">:desktop_computer:INDRIV <br> (Automated Windows Driver Updater)</h1>
+# <h1 align="center">:desktop_computer:INDRIV <br> (Pembaruan Otomatis Driver Windows)</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/PowerShell-v5.1%2B-blue.svg?logo=powershell&logoColor=white" alt="PowerShell Version" />
   <img src="https://img.shields.io/badge/Platform-Windows-0078D6.svg?logo=windows&logoColor=white" alt="Platform" />
